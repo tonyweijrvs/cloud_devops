@@ -26,7 +26,7 @@ sudo docker run --name jrvs-psql \
 --network trading-net \
 -d -p 5432:5432 jrvs-psql
 ```
-run the image, and set the environmental viriables for the database container and name the container jrvs-psql.
+Run the image, if the container failed due to error it will restart,  and set the environmental viriables for the database container and name the container ```jrvs-psql```.
 
 
 ## dockerfile for building the app image
@@ -46,7 +46,7 @@ FROM openjdk:8-alpine
 COPY --from=build /build/target/trading-1.0-SNAPSHOT.jar /usr/local/app/trading/lib/trading_app.jar
 ENTRYPOINT ["java","-jar","/usr/local/app/trading/lib/trading_app.jar"]
 ```
-using parent maven to build a trading-app jar file image, then use the openjdk parent image to package the trading-app jar file image, later ```docker image build --tag=<name> <file_location>``` to build the trading-app image. 
+Using parent maven to build a ```trading-app``` jar file image, then use the openjdk parent image to package the ```trading-app``` jar file image, later ```docker image build --tag=<name> <file_location>``` to build the trading-app image. 
 
 ```
 sudo docker run \
@@ -58,4 +58,4 @@ sudo docker run \
 --network trading-net \
 -p 5000:5000 -t trading-app
 ```
-run the image and set the environmental viriables, name the container trading-app, open a external port 5000 to connect to its internal port 5000
+Run the image and set the environmental viriables,if the image failed to run or encounter error it will restart, name the container ```trading-app```, open a external port ```5000``` to connect to its internal port ```5000```. The ```trading-app``` is connected to jrvs-psql through ```trading-net``` docker bridge.
