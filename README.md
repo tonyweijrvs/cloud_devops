@@ -63,3 +63,10 @@ Run the image and set the environmental viriables,if the image failed to run or 
 # Cloud Architecture Diagram
 ![AWS diagram](https://github.com/tonyweijrvs/cloud_devops/blob/master/assets/AWS.jpg)
 
+THe second method deployed the app with a load balancer and the rds is indepedent of the instance, the instance connected to the database with the port 5432, instances are also scalable, when the load is high and pass the threhold setted in the load balancer, new instance will automatically initiated to accommodate the extra load. THe load balancer play a role of distribute traffic load across all ec2 instances.
+
+
+
+
+
+
