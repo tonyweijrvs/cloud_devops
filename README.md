@@ -61,5 +61,5 @@ sudo docker run \
 Run the image and set the environmental viriables,if the image failed to run or encounter error it will restart, name the container ```trading-app```, open a external port ```5000``` to connect to its internal port ```5000```. The ```trading-app``` is connected to jrvs-psql through ```trading-net``` docker bridge.
 
 # Cloud Architecture Diagram
-![AWS diagram](https://github.com/tonyweijrvs/cloud_devops/blob/master/assets/Untitled%20Diagram.png)
+![AWS diagram](https://github.com/tonyweijrvs/cloud_devops/blob/master/assets/AWS.jpg)
 
